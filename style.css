@@ -15,11 +15,11 @@ body {
     padding: 20px;
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
     width: 320px;
-    transition: width 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .calculator.scientific-mode {
-    width: 450px;
+    width: 400px;
 }
 
 .mode-toggle {
@@ -66,7 +66,11 @@ body {
 }
 
 .calculator.scientific-mode .buttons {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.btn.scientific {
+    grid-column: span 2;
 }
 
 .btn {

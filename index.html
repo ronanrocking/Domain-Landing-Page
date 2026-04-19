@@ -7,7 +7,48 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 id="greeting">Loading...</h1>
+    <div class="calculator" id="calculator">
+        <div class="mode-toggle">
+            <button id="toggle-mode">Switch to Scientific</button>
+        </div>
+        <div class="display">
+            <div id="previous-operand"></div>
+            <div id="current-operand">0</div>
+        </div>
+        <div class="buttons">
+            <!-- Scientific keys (hidden by default) -->
+            <button class="btn scientific hidden" data-action="sin">sin</button>
+            <button class="btn scientific hidden" data-action="cos">cos</button>
+            <button class="btn scientific hidden" data-action="tan">tan</button>
+            <button class="btn scientific hidden" data-action="log">log</button>
+            <button class="btn scientific hidden" data-action="sqrt">√</button>
+            <button class="btn scientific hidden" data-action="pow">x²</button>
+            
+            <!-- Basic keys -->
+            <button class="btn col-2 color-alt" data-action="clear">AC</button>
+            <button class="btn color-alt" data-action="delete">DEL</button>
+            <button class="btn color-op" data-operator="/">÷</button>
+            
+            <button class="btn" data-number>7</button>
+            <button class="btn" data-number>8</button>
+            <button class="btn" data-number>9</button>
+            <button class="btn color-op" data-operator="*">×</button>
+            
+            <button class="btn" data-number>4</button>
+            <button class="btn" data-number>5</button>
+            <button class="btn" data-number>6</button>
+            <button class="btn color-op" data-operator="-">−</button>
+            
+            <button class="btn" data-number>1</button>
+            <button class="btn" data-number>2</button>
+            <button class="btn" data-number>3</button>
+            <button class="btn color-op" data-operator="+">+</button>
+            
+            <button class="btn" data-number>0</button>
+            <button class="btn" data-number>.</button>
+            <button class="btn col-2 color-eq" data-action="equals">=</button>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

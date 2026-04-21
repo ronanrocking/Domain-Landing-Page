@@ -1,0 +1,5 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const greeting = document.getElementById('greeting');
+    greeting.textContent = 'Hello World from JS!';
+    console.log('Script loaded successfully');
+});

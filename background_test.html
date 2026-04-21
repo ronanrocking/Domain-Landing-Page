@@ -59,28 +59,33 @@
 <div class="layer l4">.</div>
 
 <script>
+/**
+ * Creates a string of multiple text-shadows to simulate blurred particles.
+ * Each 'dot' is actually a colored shadow offset from the main character.
+ */
 function generateDots(count) {
   let shadows = [];
 
   for (let i = 0; i < count; i++) {
-    // position
+    // Random position within a 3em relative area
     let x = (-0.5 + Math.random() * 3).toFixed(2) + "em";
     let y = (-0.5 + Math.random() * 3).toFixed(2) + "em";
 
-    // warm color range (bright red → orange)
+    // Defines a warm color range (bright red → orange) using HSLA
     let hue = Math.floor(0 + Math.random() * 25); // 0–25 (red to bright orange)
     let sat = 95 + Math.random() * 5;             // 95–100% (highly saturated)
     let light = 50 + Math.random() * 20;          // 50–70% (brighter)
 
     let color = `hsla(${hue}, ${sat}%, ${light}%, 0.8)`;
 
+    // 15px is the blur radius which gives the "blob" look
     shadows.push(`${x} ${y} 15px ${color}`);
   }
 
   return shadows.join(",");
 }
 
-// apply to all layers
+// Select each div.layer and populate its text-shadow with 40 generated dots
 document.querySelectorAll('.layer').forEach(el => {
   el.style.textShadow = generateDots(40);
 });

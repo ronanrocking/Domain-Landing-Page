@@ -29,17 +29,23 @@
     animation: move infinite ease-in-out alternate;
   }
 
-  .l1 { animation-duration: 44s; }
-  .l2 { animation-duration: 43s; }
-  .l3 { animation-duration: 42s; }
-  .l4 { animation-duration: 41s; }
+  .l1 { animation-duration: 88s; }
+  .l2 { animation-duration: 76s; }
+  .l3 { animation-duration: 94s; }
+  .l4 { animation-duration: 62s; }
 
   @keyframes move {
-    from {
-      transform: rotate(0deg) scale(12) translateX(-20px);
+    0% {
+      transform: rotate(0deg) scale(12) translate(-20px, -10px);
     }
-    to {
-      transform: rotate(360deg) scale(18) translateX(20px);
+    33% {
+      transform: rotate(120deg) scale(15) translate(30px, 20px);
+    }
+    66% {
+      transform: rotate(240deg) scale(14) translate(-10px, 40px);
+    }
+    100% {
+      transform: rotate(360deg) scale(18) translate(20px, -20px);
     }
   }
 </style>

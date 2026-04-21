@@ -15,7 +15,7 @@ body {
 }
 
 .container {
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
 }
 
@@ -26,10 +26,16 @@ body {
 
 .hero-left {
     flex: 0 0 60%;
+    display: flex;
+    align-items: center;
 }
 
 .hero-right {
     flex: 0 0 40%;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 h1 {
@@ -37,7 +43,8 @@ h1 {
     margin: 0;
 }
 
-/* Enable smooth scrolling if desired */
 html {
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow-x: hidden;
 }

@@ -1,96 +1,96 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Warm Particle Background</title>
-
+<title>Warm Fluid Background</title>
 <style>
-  html {
-    font: 5vmin/1.3 serif;
-    overflow: hidden;
-    background: #ffae42;
+  :root {
+    --bg-color: #ff9a3d;
+    --blob1-color: #ff0000;
+    --blob2-color: #ff4500;
+    --blob3-color: #8b0000;
+    --blob4-color: #d2691e;
   }
 
   body {
     margin: 0;
-    font-size: 32px;
-    color: transparent;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--bg-color);
   }
 
-  .layer {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 3em;
-    height: 3em;
-    content: '.';
-    mix-blend-mode: multiply;
-    animation: move infinite ease-in-out alternate;
+  .gradient-bg {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    filter: url(#goo);
+    overflow: hidden;
   }
 
-  .l1 { animation-duration: 88s; }
-  .l2 { animation-duration: 76s; }
-  .l3 { animation-duration: 94s; }
-  .l4 { animation-duration: 62s; }
+  .blob {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    mix-blend-mode: hard-light;
+    opacity: 0.8;
+  }
 
-  @keyframes move {
-    0% {
-      transform: rotate(0deg) scale(10) translate(-20px, -10px);
-    }
-    33% {
-      transform: rotate(120deg) scale(12) translate(30px, 20px);
-    }
-    66% {
-      transform: rotate(240deg) scale(11) translate(-10px, 40px);
-    }
-    100% {
-      transform: rotate(360deg) scale(14) translate(20px, -20px);
-    }
+  .b1 { background: var(--blob1-color); top: -10%; left: -10%; animation: move1 40s infinite linear; }
+  .b2 { background: var(--blob2-color); bottom: -10%; right: -10%; animation: move2 50s infinite linear; }
+  .b3 { background: var(--blob3-color); top: 40%; left: 30%; animation: move3 60s infinite linear; }
+  .b4 { background: var(--blob4-color); top: 10%; right: 20%; animation: move4 45s infinite linear; }
+
+  @keyframes move1 {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(100px, 200px) scale(1.2); }
+    66% { transform: translate(200px, -100px) scale(0.8); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
+
+  @keyframes move2 {
+    0% { transform: translate(0, 0) scale(1.2); }
+    50% { transform: translate(-200px, -300px) scale(0.7); }
+    100% { transform: translate(0, 0) scale(1.2); }
+  }
+
+  @keyframes move3 {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(150px, 150px) rotate(180deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+  }
+
+  @keyframes move4 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-300px, 100px) scale(1.5); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
+
+  svg {
+    display: none;
   }
 </style>
 </head>
-
 <body>
 
-<div class="layer l1">.</div>
-<div class="layer l2">.</div>
-<div class="layer l3">.</div>
-<div class="layer l4">.</div>
+<div class="gradient-bg">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+  <div class="blob b4"></div>
+</div>
 
-<script>
-/**
- * Creates a string of multiple text-shadows to simulate blurred particles.
- * Each 'dot' is actually a colored shadow offset from the main character.
- */
-function generateDots(count) {
-  let shadows = [];
-
-  for (let i = 0; i < count; i++) {
-    // Random position within a 3em relative area
-    let x = (-0.5 + Math.random() * 3).toFixed(2) + "em";
-    let y = (-0.5 + Math.random() * 3).toFixed(2) + "em";
-
-    // Defines a warm color range (bright red → orange) using HSLA
-    let hue = Math.floor(0 + Math.random() * 100); // 0–25 (red to bright orange)
-    let sat = 95 + Math.random() * 5;             // 95–100% (highly saturated)
-    let light = 50 + Math.random() * 20;          // 50–70% (brighter)
-
-    let color = `hsla(${hue}, ${sat}%, ${light}%, 0.8)`;
-
-    // 15px is the blur radius which gives the "blob" look
-    shadows.push(`${x} ${y} 15px ${color}`);
-  }
-
-  return shadows.join(",");
-}
-
-// Select each div.layer and populate its text-shadow with 40 generated dots
-document.querySelectorAll('.layer').forEach(el => {
-  el.style.textShadow = generateDots(40);
-});
-</script>
+<svg xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="60" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -12" result="goo" />
+      <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+    </filter>
+  </defs>
+</svg>
 
 </body>
 </html>
-```

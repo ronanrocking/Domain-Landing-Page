@@ -67,12 +67,12 @@ function generateDots(count) {
     let x = (-0.5 + Math.random() * 3).toFixed(2) + "em";
     let y = (-0.5 + Math.random() * 3).toFixed(2) + "em";
 
-    // warm color range (red → orange)
-    let hue = Math.floor(0 + Math.random() * 30); // 0–30 (red to orange)
-    let sat = 85 + Math.random() * 15;            // 85–100%
-    let light = 45 + Math.random() * 15;          // 45–60%
+    // warm color range (bright red → orange)
+    let hue = Math.floor(0 + Math.random() * 25); // 0–25 (red to bright orange)
+    let sat = 95 + Math.random() * 5;             // 95–100% (highly saturated)
+    let light = 50 + Math.random() * 20;          // 50–70% (brighter)
 
-    let color = `hsla(${hue}, ${sat}%, ${light}%, 0.7)`;
+    let color = `hsla(${hue}, ${sat}%, ${light}%, 0.8)`;
 
     shadows.push(`${x} ${y} 15px ${color}`);
   }

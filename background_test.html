@@ -9,7 +9,7 @@
   html {
     font: 5vmin/1.3 serif;
     overflow: hidden;
-    background: #0a0a0a;
+    background: #ff8c00;
   }
 
   body {
@@ -25,7 +25,7 @@
     width: 3em;
     height: 3em;
     content: '.';
-    mix-blend-mode: screen;
+    mix-blend-mode: multiply;
     animation: move infinite ease-in-out alternate;
   }
 
@@ -67,12 +67,12 @@ function generateDots(count) {
     let x = (-0.5 + Math.random() * 3).toFixed(2) + "em";
     let y = (-0.5 + Math.random() * 3).toFixed(2) + "em";
 
-    // warm color range (orange → yellow)
-    let hue = Math.floor(30 + Math.random() * 35); // 30–65
-    let sat = 90 + Math.random() * 10;             // 90–100%
-    let light = 55 + Math.random() * 15;           // 55–70%
+    // warm color range (red → orange)
+    let hue = Math.floor(0 + Math.random() * 30); // 0–30 (red to orange)
+    let sat = 85 + Math.random() * 15;            // 85–100%
+    let light = 45 + Math.random() * 15;          // 45–60%
 
-    let color = `hsla(${hue}, ${sat}%, ${light}%, 0.9)`;
+    let color = `hsla(${hue}, ${sat}%, ${light}%, 0.7)`;
 
     shadows.push(`${x} ${y} 7px ${color}`);
   }

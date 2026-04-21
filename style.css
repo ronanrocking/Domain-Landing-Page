@@ -39,12 +39,12 @@ body {
     opacity: 0.7;
 }
 
-.b1 { background: #003566; top: -10%; left: -10%; animation: move1 25s infinite linear; }
-.b2 { background: #001d3d; bottom: -10%; right: -10%; animation: move2 30s infinite linear; }
-.b3 { background: #0077b6; top: 40%; left: 30%; animation: move3 35s infinite linear; }
-.b4 { background: #5a00d8; top: 10%; right: 20%; animation: move4 28s infinite linear; }
-.b5 { background: #03045e; bottom: 20%; left: 10%; animation: move1 32s infinite linear reverse; }
-.b6 { background: #48cae4b5; top: 30%; right: 10%; animation: move2 38s infinite linear reverse; }
+.b1 { background: #003566; top: -10%; left: -10%; animation: move1 12s infinite linear; }
+.b2 { background: #001d3d; bottom: -10%; right: -10%; animation: move2 15s infinite linear; }
+.b3 { background: #0077b6; top: 40%; left: 30%; animation: move3 18s infinite linear; }
+.b4 { background: #5a00d8; top: 10%; right: 20%; animation: move4 14s infinite linear; }
+.b5 { background: #03045e; bottom: 20%; left: 10%; animation: move1 16s infinite linear reverse; }
+.b6 { background: #48cae4b5; top: 30%; right: 10%; animation: move2 20s infinite linear reverse; }
 
 @keyframes move1 {
     0% { transform: translate(0, 0) scale(1); }

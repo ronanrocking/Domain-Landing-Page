@@ -9,7 +9,7 @@
   html {
     font: 5vmin/1.3 serif;
     overflow: hidden;
-    background: #ffcc33;
+    background: #ffae42;
   }
 
   body {
@@ -36,16 +36,16 @@
 
   @keyframes move {
     0% {
-      transform: rotate(0deg) scale(12) translate(-20px, -10px);
+      transform: rotate(0deg) scale(20) translate(-20px, -10px);
     }
     33% {
-      transform: rotate(120deg) scale(15) translate(30px, 20px);
+      transform: rotate(120deg) scale(25) translate(30px, 20px);
     }
     66% {
-      transform: rotate(240deg) scale(14) translate(-10px, 40px);
+      transform: rotate(240deg) scale(22) translate(-10px, 40px);
     }
     100% {
-      transform: rotate(360deg) scale(18) translate(20px, -20px);
+      transform: rotate(360deg) scale(28) translate(20px, -20px);
     }
   }
 </style>
@@ -67,14 +67,14 @@ function generateDots(count) {
     let x = (-0.5 + Math.random() * 3).toFixed(2) + "em";
     let y = (-0.5 + Math.random() * 3).toFixed(2) + "em";
 
-    // warm color range (darker reds → deep orange)
-    let hue = Math.floor(0 + Math.random() * 15); // 0–15 (deeper reds)
-    let sat = 95 + Math.random() * 5;             // 95–100%
-    let light = 20 + Math.random() * 10;           // 20–30% (even darker for more contrast)
+    // warm color range (red → orange)
+    let hue = Math.floor(0 + Math.random() * 30); // 0–30 (red to orange)
+    let sat = 85 + Math.random() * 15;            // 85–100%
+    let light = 45 + Math.random() * 15;          // 45–60%
 
-    let color = `hsla(${hue}, ${sat}%, ${light}%, 0.85)`;
+    let color = `hsla(${hue}, ${sat}%, ${light}%, 0.7)`;
 
-    shadows.push(`${x} ${y} 7px ${color}`);
+    shadows.push(`${x} ${y} 15px ${color}`);
   }
 
   return shadows.join(",");

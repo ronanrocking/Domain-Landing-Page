@@ -8,7 +8,15 @@
 </head>
 <body>
     <section class="viewport-section" id="hero">
-        <div class="container">
+        <div class="gradient-bg">
+            <div class="blob b1"></div>
+            <div class="blob b2"></div>
+            <div class="blob b3"></div>
+            <div class="blob b4"></div>
+            <div class="blob b5"></div>
+            <div class="blob b6"></div>
+        </div>
+        <div class="container hero-overlay">
             <div class="hero-content">
                 <div class="hero-left">
                     <h1>Ronan Madan</h1>
@@ -20,6 +28,20 @@
             </div>
         </div>
     </section>
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="100" result="blur" />
+                <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch" result="noise" />
+                <feColorMatrix in="noise" type="saturate" values="0" result="destatNoise" />
+                <feComponentTransfer in="destatNoise" result="grain">
+                    <feFuncA type="linear" slope="0.1" />
+                </feComponentTransfer>
+                <feComposite in="blur" in2="grain" operator="over" />
+            </filter>
+        </defs>
+    </svg>
 
     <section class="viewport-section" id="portfolio">
         <div class="container">

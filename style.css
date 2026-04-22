@@ -96,9 +96,8 @@ body {
 }
 
 .hero-right {
-    flex: 0 0 40%;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    flex: 0 0 calc(40% - 10rem);
+    padding: 0 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -116,9 +115,9 @@ h1 {
 }
 
 h1#title_name {
-    font-size: 6rem;
-    letter-spacing: 2vw;
-    text-indent: 2vw;
+    font-size: 4rem;
+    letter-spacing: 0.5vw;
+    text-indent: 0vw;
     text-align: center;
     margin: 0;
     width: 100%;

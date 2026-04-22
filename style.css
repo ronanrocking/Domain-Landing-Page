@@ -111,6 +111,10 @@ h1 {
     margin: 0;
 }
 
+h1#title_name{
+    
+}
+
 .hero-divider {
     width: 1px;
     height: 200px;

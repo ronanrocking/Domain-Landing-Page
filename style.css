@@ -88,7 +88,7 @@ body {
 }
 
 .hero-left {
-    flex: 0 0 60%;
+    flex: 0 0 60%;    ;
     display: flex;
     align-items: center;
 }
@@ -115,7 +115,7 @@ h1 {
 
 h1#title_name{
     font-size: 4rem;
-    letter-spacing: 1vw;
+    letter-spacing: 0.5vw;
 }
 
 .hero-divider {

@@ -116,6 +116,8 @@ h1 {
 }
 
 h1#title_name {
+    font-family: 'Playfair Display', serif;
+    
     font-size: 5rem;
     letter-spacing: 0.3vw;
     text-indent: 0vw;

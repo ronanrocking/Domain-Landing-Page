@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Merriweather', serif;
     margin: 0;
     background-color: #f0f0f0;
     color: #333;
@@ -100,9 +100,22 @@ body {
     justify-content: center;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'EB Garamond', serif;
+}
+
 h1 {
     font-size: 3rem;
     margin: 0;
+}
+
+.hero-divider {
+    width: 2px;
+    height: 150px;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.1) 70%, rgba(255,255,255,0) 100%);
+    box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    margin: auto 0;
+    position: relative;
 }
 
 html {

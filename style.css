@@ -1,5 +1,5 @@
 body {
-    font-family: 'Merriweather', serif;
+    font-family: 'Playfair Display', serif;
     margin: 0;
     background-color: #000000;
     color: #ffffff;
@@ -42,7 +42,7 @@ body {
 .b1 { background: #003566; top: -10%; left: -10%; animation: move1 12s infinite linear; }
 .b2 { background: #001d3d; bottom: -10%; right: -10%; animation: move2 15s infinite linear; }
 .b3 { background: #0077b6; top: 40%; left: 30%; animation: move3 18s infinite linear; }
-.b4 { background: #5a00d8; top: 10%; right: 20%; animation: move4 14s infinite linear; }
+.b4 { background: #6012cd; top: 10%; right: 20%; animation: move4 14s infinite linear; }
 .b5 { background: #03045e; bottom: 20%; left: 10%; animation: move1 16s infinite linear reverse; }
 .b6 { background: #48cae4b5; top: 30%; right: 10%; animation: move2 20s infinite linear reverse; }
 
@@ -107,7 +107,12 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'EB Garamond', serif;
+    font-style: italic;
     font-weight: 400;
+
+    margin: 0;
+
+    
 }
 
 h1 {
@@ -117,9 +122,9 @@ h1 {
 
 h1#title_name {
     font-family: 'Playfair Display', serif;
-    
-    font-size: 5rem;
-    letter-spacing: 0.3vw;
+    font-style: normal;
+    font-size: 4.5rem;
+    letter-spacing: 0.1vw;
     text-indent: 0vw;
     text-align: center;
     margin: 0;

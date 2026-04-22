@@ -95,10 +95,12 @@ body {
 
 .hero-right {
     flex: 0 0 40%;
-    padding-left: 2rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -112,7 +114,8 @@ h1 {
 }
 
 h1#title_name{
-    
+    font-size: 4rem;
+    letter-spacing: 1vw;
 }
 
 .hero-divider {

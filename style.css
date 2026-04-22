@@ -1,8 +1,8 @@
 body {
     font-family: 'Merriweather', serif;
     margin: 0;
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #000000;
+    color: #ffffff;
 }
 
 .viewport-section {
@@ -84,6 +84,7 @@ body {
 .hero-content {
     display: flex;
     width: 100%;
+    align-items: center;
 }
 
 .hero-left {
@@ -111,12 +112,14 @@ h1 {
 }
 
 .hero-divider {
-    width: 2px;
-    height: 150px;
-    background: radial-gradient(ellipse at center, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.1) 70%, rgba(255,255,255,0) 100%);
-    box-shadow: 0 0 10px rgba(255,255,255,0.3);
-    margin: auto 0;
-    position: relative;
+    width: 3px;
+    height: 200px;
+    background: radial-gradient(circle at center, 
+        rgba(255,255,255,0.9) 0%, 
+        rgba(255,255,255,0.4) 40%, 
+        rgba(255,255,255,0) 100%);
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    flex-shrink: 0;
 }
 
 html {

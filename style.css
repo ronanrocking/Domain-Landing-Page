@@ -13,6 +13,7 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
+    scroll-snap-align: start;
 }
 
 #hero {
@@ -137,4 +138,5 @@ h1#title_name {
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    scroll-snap-type: y mandatory;
 }

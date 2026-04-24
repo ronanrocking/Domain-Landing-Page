@@ -1,0 +1,17 @@
+{
+    "live": [
+        {
+            "title": "Project One",
+            "description": "A sophisticated digital experience crafted with precision and care.",
+            "date": "2024",
+            "image": "assets/projects/project1.jpg"
+        },
+        {
+            "title": "Project Two",
+            "description": "An exploration of modern design principles and interactive elements.",
+            "date": "2023",
+            "image": "assets/projects/project2.jpg"
+        }
+    ],
+    "archive": []
+}

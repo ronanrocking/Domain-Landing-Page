@@ -94,7 +94,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: fadeInUp 1.2s ease-out 0.5s forwards;
+    animation: fadeInUp 1.7s ease-out 0.5s forwards;
     opacity: 0;
 }
 
@@ -154,7 +154,7 @@ h1#title_name {
         rgba(255,255,255,0) 100%);
     box-shadow: 0 0 5px rgba(255,255,255,0.2);
     flex-shrink: 0;
-    animation: fadeInUp 1.2s ease-out 1.2s forwards;
+    animation: fadeInUp 1.6s ease-out 1.2s forwards;
     opacity: 0;
 }
 

@@ -38,6 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    const tabBar = document.querySelector('.tab-bar');
+    tabBar.addEventListener('mousemove', (e) => {
+        const rect = tabBar.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        tabBar.style.setProperty('--x', `${x}px`);
+        tabBar.style.setProperty('--y', `${y}px`);
+    });
+
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             tabBtns.forEach(b => b.classList.remove('active'));

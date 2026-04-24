@@ -175,10 +175,31 @@ html {
     display: flex;
     gap: 2rem;
     margin-bottom: 4rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: linear-gradient(135deg, #001d3d 0%, #003566 100%);
     padding: 0.5rem 1.5rem;
     border-radius: 50px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.tab-bar::before {
+    content: '';
+    position: absolute;
+    top: var(--y, 0);
+    left: var(--x, 0);
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+.tab-bar:hover::before {
+    opacity: 1;
 }
 
 .tab-btn {

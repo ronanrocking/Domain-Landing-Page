@@ -215,6 +215,8 @@ html {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s ease-out forwards;
+    text-decoration: none;
+    color: inherit;
 }
 
 .project-image-wrapper {

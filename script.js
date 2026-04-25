@@ -18,7 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const projects = projectsData[category] || [];
 
         projects.forEach((project, index) => {
-            const card = document.createElement('div');
+            const card = document.createElement('a');
+            card.href = project.url || '#';
+            card.target = "_blank";
             card.className = 'project-card';
             card.style.animationDelay = `${index * 0.1}s`;
 

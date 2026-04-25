@@ -1,9 +1,9 @@
 {
     "live": [
         {
-            "title": "Project One",
-            "description": "A sophisticated digital experience crafted with precision and care.",
-            "date": "2024",
+            "title": "FileBrowser",
+            "description": "My Personal File Server giving me free unlimited cloud storage. Running on my Pi with a 1TB SSD",
+            "date": "Nov 2025",
             "image": "assets/projects/project1.jpg"
         },
         {
@@ -11,12 +11,6 @@
             "description": "An exploration of modern design principles and interactive elements.",
             "date": "2023",
             "image": "assets/projects/project2.jpg"
-        },
-        {
-            "title": "Project Three",
-            "description": "A technical showcase of full-stack development and responsive architecture.",
-            "date": "2024",
-            "image": "assets/projects/project3.jpg"
         }
     ],
     "archive": []

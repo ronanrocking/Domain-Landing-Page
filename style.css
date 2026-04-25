@@ -403,8 +403,10 @@ html {
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
-    gap: 2rem;
+    gap: 3rem;
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     flex: 1;
     min-height: 0;
     overflow: hidden;

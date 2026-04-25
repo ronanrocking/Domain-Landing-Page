@@ -120,9 +120,9 @@ body {
     width: 100%;
     padding: 0.8rem 1.5rem;
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.478);
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1), inset 0 0 10px rgba(255, 255, 255, 0.05);
-    border-radius: 50px;
+    border-radius: 25px;
     color: #ffffff;
     font-family: 'EB Garamond', serif;
     font-size: 1.1rem;

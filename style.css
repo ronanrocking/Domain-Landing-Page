@@ -179,7 +179,7 @@ html {
     padding: 0.5rem 1.5rem;
     border-radius: 50px;
     position: relative;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     background-image: linear-gradient(#000, #000), linear-gradient(135deg, #371675 0%, #014788 100%);
     background-origin: border-box;
     background-clip: padding-box, border-box;

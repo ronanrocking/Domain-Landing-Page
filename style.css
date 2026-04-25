@@ -98,6 +98,64 @@ body {
     opacity: 0;
 }
 
+.hero-title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.command-bar-wrapper {
+    position: relative;
+    width: 60%;
+    max-width: 400px;
+}
+
+#command-input {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: #fff;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.1rem;
+    outline: none;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(5px);
+    text-align: center;
+}
+
+#command-input:focus {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+#command-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    font-style: italic;
+}
+
+.command-bar-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #003566, #6012cd, #0077b6);
+    filter: blur(15px);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease;
+    border-radius: 4px;
+}
+
+#command-input:focus + .command-bar-glow {
+    opacity: 0.3;
+}
+
 .hero-right {
     flex: 0 0 calc(40% - 10rem);
     padding: 0 5rem;

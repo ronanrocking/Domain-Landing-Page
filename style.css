@@ -113,9 +113,9 @@ body {
 }
 
 #command-input {
-    width: 100%;
+    width: 80%;
     padding: 0.8rem 1.5rem;
-    background: #ffffff;
+    background: #ffffffa1;
     border: 1px solid #ffffff;
     border-radius: 50px;
     color: #000;

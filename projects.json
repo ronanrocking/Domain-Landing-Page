@@ -4,13 +4,15 @@
             "title": "FileBrowser",
             "description": "My Personal File Server giving me free unlimited cloud storage. Running on my Pi with a 1TB SSD",
             "date": "Nov 2025",
-            "image": "assets/projects/project1.jpg"
+            "image": "assets/projects/project1.jpg",
+            "url": "https://github.com"
         },
         {
             "title": "Project Two",
             "description": "An exploration of modern design principles and interactive elements.",
             "date": "2023",
-            "image": "assets/projects/project2.jpg"
+            "image": "assets/projects/project2.jpg",
+            "url": "https://google.com"
         }
     ],
     "archive": []

@@ -3,16 +3,16 @@
         {
             "title": "FileBrowser",
             "description": "My Personal File Server giving me free unlimited cloud storage. Running on my Pi with a 1TB SSD",
-            "date": "Nov 2025",
-            "image": "assets/projects/project1.jpg",
-            "url": "https://github.com"
+            "date": "November 2025",
+            "image": "assets/projects/FileBrowser.png",
+            "url": "https://files.ronanrocking.com"
         },
         {
-            "title": "Project Two",
-            "description": "An exploration of modern design principles and interactive elements.",
-            "date": "2023",
-            "image": "assets/projects/project2.jpg",
-            "url": "https://google.com"
+            "title": "Remote SSH Terminal",
+            "description": "SSH Terminal to my Pi (which hosts all these projects) to grant me remote access.",
+            "date": "April 2026",
+            "image": "assets/projects/SSH.png",
+            "url": "https://ssh.ronanrocking.com"
         }
     ],
     "archive": []

@@ -112,12 +112,13 @@ body {
     max-width: 600px;
     display: flex;
     justify-content: center;
+    
 }
 
 #command-input {
-    width: 80%;
+    width: 75%;
     padding: 0.8rem 1.5rem;
-    background: #ffffffa1;
+    background: #ffffff21;
     border: 1px solid #ffffff;
     border-radius: 50px;
     color: #000;

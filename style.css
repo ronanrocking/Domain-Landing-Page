@@ -116,6 +116,7 @@ body {
             rgba(255,255,255,0.9) 0%, 
             rgba(255,255,255,0.4) 40%, 
             rgba(255,255,255,0) 100%);
+        margin: 1rem 0;
     }
 
     .hero-right {
@@ -136,8 +137,9 @@ body {
     }
 
     .projects-grid {
-        overflow: visible;
+        overflow-y: auto;
         padding-bottom: 2rem;
+        max-height: 60vh;
     }
 
     .project-card {

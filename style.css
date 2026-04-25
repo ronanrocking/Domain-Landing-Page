@@ -142,23 +142,6 @@ body {
     font-style: italic;
 }
 
-.command-bar-glow {
-    position: absolute;
-    top: 0;
-    left: 12.5%;
-    width: 75%;
-    height: 100%;
-    background: #ffffff;
-    filter: blur(2px);
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 0.4s ease;
-    border-radius: 50px;
-}
-
-#command-input:focus + .command-bar-glow {
-    opacity: 0.3;
-}
 
 .hero-right {
     flex: 0 0 calc(40% - 10rem);

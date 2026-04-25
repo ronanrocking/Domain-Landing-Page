@@ -215,14 +215,14 @@ html {
 }
 
 .portfolio-divider {
-    width: 80%;
+    width: 60%;
     height: 1px;
     background: radial-gradient(circle at center, 
         rgba(255,255,255,0.8) 0%, 
         rgba(255,255,255,0.3) 40%, 
         rgba(255,255,255,0) 100%);
     box-shadow: 0 0 5px rgba(255,255,255,0.1);
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     flex-shrink: 0;
 }
 

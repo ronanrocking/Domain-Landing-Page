@@ -145,7 +145,7 @@ body {
 .command-bar-glow {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 12.5%;
     width: 75%;
     height: 100%;
     background: #ffffff;

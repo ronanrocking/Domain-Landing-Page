@@ -17,6 +17,12 @@
             "description": "A technical showcase of full-stack development and responsive architecture.",
             "date": "2024",
             "image": "assets/projects/project3.jpg"
+        },
+        {
+            "title": "Project Four",
+            "description": "An experimental project focused on performance and seamless user experience.",
+            "date": "2024",
+            "image": "assets/projects/project4.jpg"
         }
     ],
     "archive": []

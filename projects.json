@@ -11,6 +11,12 @@
             "description": "An exploration of modern design principles and interactive elements.",
             "date": "2023",
             "image": "assets/projects/project2.jpg"
+        },
+        {
+            "title": "Project Three",
+            "description": "A technical showcase of full-stack development and responsive architecture.",
+            "date": "2024",
+            "image": "assets/projects/project3.jpg"
         }
     ],
     "archive": []

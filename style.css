@@ -116,30 +116,31 @@ body {
             rgba(255,255,255,0.9) 0%, 
             rgba(255,255,255,0.4) 40%, 
             rgba(255,255,255,0) 100%);
-        margin: 1rem 0;
+        margin: 2rem 0;
     }
 
     .hero-right {
         flex: 0 0 auto;
-        padding: 0;
+        padding: 0 1rem;
         text-align: center;
         width: 100%;
     }
 
     .portfolio-container {
         height: auto;
-        padding: 10vh 1rem;
+        padding: 5vh 1rem;
     }
 
     .viewport-section {
         height: auto;
         min-height: 100vh;
+        scroll-snap-align: none;
     }
 
     .projects-grid {
-        overflow-y: auto;
+        overflow: visible;
         padding-bottom: 2rem;
-        max-height: 60vh;
+        max-height: none;
     }
 
     .project-card {

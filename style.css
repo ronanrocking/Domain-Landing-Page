@@ -234,16 +234,17 @@ html {
     gap: 2rem;
     width: 100%;
     flex: 1;
+    min-height: 0;
     overflow: hidden;
 }
 
 .project-card {
-    flex: 1 1 250px;
+    flex: 0 1 450px;
     min-width: 0;
-    max-width: 450px;
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
+    height: 100%;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s ease-out forwards;
@@ -257,6 +258,8 @@ html {
     background: #111;
     overflow: hidden;
     border-radius: 4px;
+    flex-shrink: 1;
+    min-height: 0;
 }
 
 .project-image-wrapper img {

@@ -169,7 +169,7 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    min-height: 100vh;
+    height: 100vh;
     padding: 20vh 0;
     box-sizing: border-box;
     opacity: 0;
@@ -218,8 +218,10 @@ html {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-content: flex-start;
     gap: 3rem;
     width: 100%;
+    flex: 1;
     overflow-y: auto;
 }
 

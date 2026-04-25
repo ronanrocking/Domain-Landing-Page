@@ -358,6 +358,10 @@ html {
     align-items: baseline;
 }
 
+.project-header h3 {
+    font-size: 1.6rem;
+}
+
 .project-date {
     font-family: 'EB Garamond', serif;
     font-style: italic;

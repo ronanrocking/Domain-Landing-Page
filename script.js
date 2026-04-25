@@ -102,10 +102,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ripple.style.left = `${x}px`;
         ripple.style.top = `${y}px`;
-        ripple.style.width = `${rect.width * 2}px`;
-        ripple.style.height = `${rect.width * 2}px`;
-        ripple.style.marginLeft = `-${rect.width}px`;
-        ripple.style.marginTop = `-${rect.width}px`;
+        ripple.style.width = `${rect.width * 2.5}px`;
+        ripple.style.height = `${rect.width * 2.5}px`;
+        ripple.style.marginLeft = `-${rect.width * 1.25}px`;
+        ripple.style.marginTop = `-${rect.width * 1.25}px`;
 
         // Trigger reflow
         ripple.offsetWidth;

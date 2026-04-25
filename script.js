@@ -50,6 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    window.addEventListener('resize', () => {
+        const activeTab = document.querySelector('.tab-btn.active');
+        updateIndicator(activeTab);
+    });
+
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             tabBtns.forEach(b => b.classList.remove('active'));

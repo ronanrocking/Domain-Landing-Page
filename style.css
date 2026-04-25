@@ -89,6 +89,71 @@ body {
     align-items: center;
 }
 
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .hero-left {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    h1#title_name {
+        font-size: 3rem;
+    }
+
+    .command-bar-wrapper {
+        width: 90%;
+    }
+
+    .hero-divider {
+        width: 80%;
+        height: 1px;
+        background: radial-gradient(circle at center, 
+            rgba(255,255,255,0.9) 0%, 
+            rgba(255,255,255,0.4) 40%, 
+            rgba(255,255,255,0) 100%);
+    }
+
+    .hero-right {
+        flex: 0 0 auto;
+        padding: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .portfolio-container {
+        height: auto;
+        padding: 10vh 1rem;
+    }
+
+    .viewport-section {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .projects-grid {
+        overflow: visible;
+        padding-bottom: 2rem;
+    }
+
+    .project-card {
+        flex: 0 1 100%;
+    }
+
+    .tab-bar {
+        gap: 0.5rem;
+    }
+
+    .tab-btn {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+}
+
 .hero-left {
     flex: 0 0 60%;
     display: flex;

@@ -82,5 +82,44 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(portfolioContainer);
     }
 
+    // Command Bar Ripple Effect
+    const commandInput = document.getElementById('command-input');
+    const commandWrapper = document.querySelector('.command-bar-wrapper');
+    let ripple = null;
+
+    commandInput.addEventListener('mousedown', (e) => {
+        if (commandInput.classList.contains('active')) return;
+
+        const rect = commandWrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        if (!ripple) {
+            ripple = document.createElement('div');
+            ripple.className = 'command-ripple';
+            commandWrapper.appendChild(ripple);
+        }
+
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
+        ripple.style.width = `${rect.width * 2}px`;
+        ripple.style.height = `${rect.width * 2}px`;
+        ripple.style.marginLeft = `-${rect.width}px`;
+        ripple.style.marginTop = `-${rect.width}px`;
+
+        // Trigger reflow
+        ripple.offsetWidth;
+
+        ripple.classList.add('expanding');
+        commandInput.classList.add('active');
+    });
+
+    commandInput.addEventListener('blur', () => {
+        if (ripple) {
+            ripple.classList.remove('expanding');
+        }
+        commandInput.classList.remove('active');
+    });
+
     loadProjects();
 });

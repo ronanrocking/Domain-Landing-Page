@@ -175,14 +175,12 @@ html {
     display: flex;
     gap: 2rem;
     margin-bottom: 4rem;
-    background: transparent;
+    background: #000;
     padding: 0.5rem 1.5rem;
     border-radius: 50px;
     position: relative;
-    border: 2px solid transparent;
-    background-image: linear-gradient(#000, #000), linear-gradient(135deg, #371675 0%, #014788 100%);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1), inset 0 0 10px rgba(255, 255, 255, 0.05);
 }
 
 .tab-btn {

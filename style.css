@@ -6,19 +6,19 @@ body {
 }
 
 .viewport-section {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden;
     scroll-snap-align: start;
 }
 
 #hero {
     background-color: #000000;
     color: #ffffff;
+    overflow: hidden;
 }
 
 .gradient-bg {
@@ -326,12 +326,16 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
     padding: 20vh 0;
     box-sizing: border-box;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+    background-color: #000000;
+    position: relative;
+    z-index: 20;
 }
 
 .portfolio-container.visible {

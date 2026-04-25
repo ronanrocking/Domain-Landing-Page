@@ -169,6 +169,14 @@ html {
     flex-direction: column;
     align-items: center;
     height: 80%;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.portfolio-container.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .tab-bar {

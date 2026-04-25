@@ -41,13 +41,29 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
+    const indicator = document.querySelector('.tab-indicator');
+    
+    const updateIndicator = (activeBtn) => {
+        if (indicator && activeBtn) {
+            indicator.style.width = `${activeBtn.offsetWidth}px`;
+            indicator.style.left = `${activeBtn.offsetLeft}px`;
+        }
+    };
+
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             tabBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
+            updateIndicator(btn);
             renderProjects(btn.dataset.tab);
         });
     });
+
+    // Initial position
+    setTimeout(() => {
+        const activeTab = document.querySelector('.tab-btn.active');
+        updateIndicator(activeTab);
+    }, 100);
 
     const observerOptions = {
         threshold: 0.1

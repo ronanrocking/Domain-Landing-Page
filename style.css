@@ -115,22 +115,22 @@ body {
 #command-input {
     width: 100%;
     padding: 0.8rem 1.5rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
     color: #fff;
     font-family: 'EB Garamond', serif;
     font-size: 1.1rem;
     outline: none;
     transition: all 0.4s ease;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
     text-align: center;
 }
 
 #command-input:focus {
-    background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #ffffff;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
 }
 
 #command-input::placeholder {
@@ -144,12 +144,12 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, #003566, #6012cd, #0077b6);
-    filter: blur(15px);
+    background: #ffffff;
+    filter: blur(20px);
     opacity: 0;
     z-index: -1;
     transition: opacity 0.4s ease;
-    border-radius: 4px;
+    border-radius: 50px;
 }
 
 #command-input:focus + .command-bar-glow {

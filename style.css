@@ -168,7 +168,8 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 80%;
+    height: auto;
+    padding: 10vh 0;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 1.2s ease-out, transform 1.2s ease-out;

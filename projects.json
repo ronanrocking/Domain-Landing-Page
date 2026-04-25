@@ -23,6 +23,42 @@
             "description": "An experimental project focused on performance and seamless user experience.",
             "date": "2024",
             "image": "assets/projects/project4.jpg"
+        },
+        {
+            "title": "Project Five",
+            "description": "A deep dive into data visualisation and real-time analytics.",
+            "date": "2023",
+            "image": "assets/projects/project5.jpg"
+        },
+        {
+            "title": "Project Six",
+            "description": "Building scalable infrastructure for modern cloud applications.",
+            "date": "2024",
+            "image": "assets/projects/project6.jpg"
+        },
+        {
+            "title": "Project Seven",
+            "description": "Exploring the intersection of artificial intelligence and creative design.",
+            "date": "2023",
+            "image": "assets/projects/project7.jpg"
+        },
+        {
+            "title": "Project Eight",
+            "description": "A focus on accessibility and inclusive user interface development.",
+            "date": "2024",
+            "image": "assets/projects/project8.jpg"
+        },
+        {
+            "title": "Project Nine",
+            "description": "Custom animations and high-performance rendering for the web.",
+            "date": "2023",
+            "image": "assets/projects/project9.jpg"
+        },
+        {
+            "title": "Project Ten",
+            "description": "An end-to-end e-commerce solution with integrated payment systems.",
+            "date": "2024",
+            "image": "assets/projects/project10.jpg"
         }
     ],
     "archive": []

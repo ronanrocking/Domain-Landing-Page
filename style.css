@@ -90,49 +90,64 @@ body {
 }
 
 @media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 0;
+    }
+
     .hero-content {
         flex-direction: column;
         justify-content: center;
-        gap: 2rem;
+        align-items: center;
+        gap: 3rem;
+        padding-top: 5vh;
     }
 
     .hero-left {
         flex: 0 0 auto;
         width: 100%;
+        animation: fadeInUpMobile 1.2s ease-out forwards;
+    }
+
+    @keyframes fadeInUpMobile {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     h1#title_name {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
 
     .command-bar-wrapper {
-        width: 90%;
+        width: 100%;
     }
 
     .hero-divider {
-        width: 80% !important;
+        width: 70% !important;
         height: 1px !important;
+        min-height: 1px !important;
         background: radial-gradient(circle at center, 
             rgba(255,255,255,0.9) 0%, 
             rgba(255,255,255,0.4) 40%, 
             rgba(255,255,255,0) 100%) !important;
-        margin: 2rem 0 !important;
+        margin: 1rem auto !important;
         opacity: 1 !important;
         transform: none !important;
     }
 
     .hero-right {
         flex: 0 0 auto;
-        padding: 0 1rem;
+        padding: 0;
         text-align: center;
         width: 100%;
+        animation: fadeInUpMobile 1.2s ease-out 0.5s forwards;
     }
 
     .portfolio-container {
         height: auto !important;
-        min-height: 100vh;
-        padding: 5vh 1rem !important;
-        justify-content: flex-start !important;
+        min-height: auto;
+        padding: 10vh 0 !important;
+        justify-content: center !important;
     }
 
     .viewport-section {
@@ -140,23 +155,27 @@ body {
         min-height: 100vh;
         scroll-snap-align: none !important;
         overflow: visible !important;
+        position: relative;
     }
 
     .projects-grid {
         display: flex !important;
         flex-direction: column !important;
+        align-items: center;
         overflow: visible !important;
         max-height: none !important;
         flex: none !important;
-        gap: 2rem;
+        gap: 3rem;
     }
 
     .project-card {
-        flex: 0 1 100%;
+        width: 100%;
+        max-width: 400px;
     }
 
     .tab-bar {
         gap: 0.5rem;
+        margin-bottom: 2rem;
     }
 
     .tab-btn {

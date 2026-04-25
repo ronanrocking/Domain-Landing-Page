@@ -108,17 +108,17 @@ body {
 
 .command-bar-wrapper {
     position: relative;
-    width: 60%;
-    max-width: 400px;
+    width: 100%;
+    max-width: 600px;
 }
 
 #command-input {
     width: 100%;
     padding: 0.8rem 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: #ffffff;
+    border: 1px solid #ffffff;
     border-radius: 50px;
-    color: #fff;
+    color: #000;
     font-family: 'EB Garamond', serif;
     font-size: 1.1rem;
     outline: none;
@@ -128,13 +128,13 @@ body {
 }
 
 #command-input:focus {
-    background: rgba(255, 255, 255, 0.15);
+    background: #ffffff;
     border-color: #ffffff;
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
 }
 
 #command-input::placeholder {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(0, 0, 0, 0.4);
     font-style: italic;
 }
 

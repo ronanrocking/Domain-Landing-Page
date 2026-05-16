@@ -1,3 +1,6 @@
+/* ============================================================
+   ORIGINAL — untouched from source
+   ============================================================ */
 body {
     font-family: 'Playfair Display', serif;
     margin: 0;
@@ -74,6 +77,7 @@ body {
 .hero-overlay {
     position: relative;
     z-index: 10;
+    width: 100%;
 }
 
 .container {
@@ -86,105 +90,6 @@ body {
     width: 100%;
     height: 100%;
     align-items: center;
-}
-
-@media (max-width: 768px) {
-    .container {
-        width: 90%;
-    }
-
-    .hero-content {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 3rem;
-        padding: 15vh 2rem;
-        box-sizing: border-box;
-        min-height: 100vh;
-    }
-
-    .hero-left {
-        flex: 0 0 auto;
-        width: 100%;
-        animation: fadeInUpMobile 1.2s ease-out forwards;
-    }
-
-    @keyframes fadeInUpMobile {
-        from { opacity: 0; transform: translateY(15px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    h1#title_name {
-        font-size: 2.3rem;
-    }
-
-    .command-bar-wrapper {
-        width: 100%;
-    }
-
-    .hero-divider {
-        width: 70% !important;
-        height: 1px !important;
-        min-height: 1px !important;
-        background: radial-gradient(circle at center, 
-            rgba(255,255,255,0.9) 0%, 
-            rgba(255,255,255,0.4) 40%, 
-            rgba(255,255,255,0) 100%) !important;
-        margin: 1rem auto !important;
-        opacity: 1 !important;
-        transform: none !important;
-    }
-
-    .hero-right {
-        flex: 0 0 auto;
-        padding: 0;
-        text-align: center;
-        width: 100%;
-        animation: fadeInUpMobile 1.2s ease-out 0.5s forwards;
-    }
-
-    .portfolio-container {
-        height: auto;
-        min-height: auto;
-        padding: 10vh 0;
-        justify-content: center;
-    }
-
-    .viewport-section {
-        height: auto !important;
-        min-height: 100vh;
-        scroll-snap-align: none !important;
-        overflow: visible !important;
-        position: relative;
-    }
-
-    .projects-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        overflow: visible;
-        max-height: none;
-        flex: none;
-        gap: 3rem;
-        width: 100%;
-        margin: 0 auto;
-    }
-
-    .project-card {
-        width: 100%;
-        max-width: 400px;
-    }
-
-    .tab-bar {
-        gap: 0.5rem;
-        margin-bottom: 2rem;
-    }
-
-    .tab-btn {
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-    }
-
 }
 
 .hero-left {
@@ -261,7 +166,6 @@ body {
     font-style: italic;
 }
 
-
 .hero-right {
     flex: 0 0 calc(40% - 10rem);
     padding: 0 5rem;
@@ -287,10 +191,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'EB Garamond', serif;
     font-style: italic;
     font-weight: 400;
-
     margin: 0;
-
-    
 }
 
 h1 {
@@ -328,12 +229,16 @@ html {
     scroll-snap-type: y mandatory;
 }
 
+/* ============================================================
+   PORTFOLIO SECTION — rebuilt for mobile centering fix
+   ============================================================ */
 .portfolio-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
+    width: 100%;
     padding: 20vh 0;
     box-sizing: border-box;
     opacity: 0;
@@ -350,7 +255,6 @@ html {
 }
 
 .tab-bar {
-    
     display: flex;
     gap: 1rem;
     margin-bottom: 3rem;
@@ -410,7 +314,7 @@ html {
     justify-content: center;
     align-content: flex-start;
     gap: 3rem;
-    width: 100%;
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     flex: 1;
@@ -481,4 +385,120 @@ html {
     font-size: 0.9rem;
     line-height: 1.5;
     opacity: 0.8;
+}
+
+/* ============================================================
+   MOBILE (≤ 768px)
+   — hero rules: original verbatim
+   — portfolio rules: rebuilt fix
+   ============================================================ */
+@media (max-width: 768px) {
+
+    /* --- Hero (original) --- */
+    .container {
+        width: 90%;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        padding: 15vh 2rem;
+        box-sizing: border-box;
+        min-height: 100vh;
+    }
+
+    .hero-left {
+        flex: 0 0 auto;
+        width: 100%;
+        animation: fadeInUpMobile 1.2s ease-out forwards;
+    }
+
+    @keyframes fadeInUpMobile {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1#title_name {
+        font-size: 2.3rem;
+    }
+
+    .command-bar-wrapper {
+        width: 100%;
+    }
+
+    .hero-divider {
+        width: 70% !important;
+        height: 1px !important;
+        min-height: 1px !important;
+        background: radial-gradient(circle at center, 
+            rgba(255,255,255,0.9) 0%, 
+            rgba(255,255,255,0.4) 40%, 
+            rgba(255,255,255,0) 100%) !important;
+        margin: 1rem auto !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .hero-right {
+        flex: 0 0 auto;
+        padding: 0;
+        text-align: center;
+        width: 100%;
+        animation: fadeInUpMobile 1.2s ease-out 0.5s forwards;
+    }
+
+    /* --- Shared section (original) --- */
+    .viewport-section {
+        height: auto !important;
+        min-height: 100vh;
+        scroll-snap-align: none !important;
+        overflow: visible !important;
+        position: relative;
+    }
+
+    /* --- Tab bar (original) --- */
+    .tab-bar {
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .tab-btn {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    /* --- Portfolio container (original base, keeps padding) --- */
+    .portfolio-container {
+        height: auto !important;
+        min-height: auto;
+        padding: 10vh 0;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    /* --- Grid & cards: the fix --- */
+    .projects-grid {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 1.5rem;
+        overflow: visible;
+        max-height: none;
+        flex: none;
+    }
+
+    .project-card {
+        flex: none;
+        width: 100%;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+    }
 }

@@ -421,11 +421,11 @@ html {
     }
 
     h1#title_name {
-        font-size: 2.3rem;
+        font-size: 2.8rem;
     }
 
     .command-bar-wrapper {
-        width: 100%;
+        width: 85%;
     }
 
     .hero-divider {

@@ -148,7 +148,7 @@ body {
     .portfolio-container {
         height: auto !important;
         min-height: auto;
-        padding: 10vh 0 !important;
+        padding: 10vh 1rem !important;
         justify-content: center !important;
     }
 

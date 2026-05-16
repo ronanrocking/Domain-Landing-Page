@@ -92,7 +92,6 @@ body {
 @media (max-width: 768px) {
     .container {
         width: 90%;
-        padding: 0;
     }
 
     .hero-content {
@@ -148,7 +147,7 @@ body {
     .portfolio-container {
         height: auto !important;
         min-height: auto;
-        padding: 10vh 1rem !important;
+        padding: 10vh 1rem;
         justify-content: center !important;
     }
 

@@ -5,8 +5,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const loadProjects = async () => {
         try {
-            const response = await fetch('projects.json');
-            projectsData = await response.json();
+            const [projectsResponse, archiveResponse] = await Promise.all([
+                fetch('projects.json'),
+                fetch('archive.json')
+            ]);
+            const liveProjectsData = await projectsResponse.json();
+            const archiveProjectsData = await archiveResponse.json();
+
+            projectsData = {
+                live: liveProjectsData.live || [],
+                archive: archiveProjectsData.archive || []
+            };
+            
             renderProjects('live');
         } catch (error) {
             console.error('Error loading projects:', error);

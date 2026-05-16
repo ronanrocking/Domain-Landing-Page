@@ -74,7 +74,6 @@ body {
 .hero-overlay {
     position: relative;
     z-index: 10;
-    width: 100%;
 }
 
 .container {
@@ -145,10 +144,10 @@ body {
     }
 
     .portfolio-container {
-        height: auto !important;
+        height: auto;
         min-height: auto;
-        padding: 10vh 1rem;
-        justify-content: center !important;
+        padding: 10vh 0;
+        justify-content: center;
     }
 
     .viewport-section {
@@ -160,15 +159,15 @@ body {
     }
 
     .projects-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        overflow: visible !important;
-        max-height: none !important;
-        flex: none !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: visible;
+        max-height: none;
+        flex: none;
         gap: 3rem;
-        width: 100% !important;
-        margin: 0 auto !important;
+        width: 100%;
+        margin: 0 auto;
     }
 
     .project-card {
@@ -335,7 +334,6 @@ html {
     align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
-    width: 100%;
     padding: 20vh 0;
     box-sizing: border-box;
     opacity: 0;

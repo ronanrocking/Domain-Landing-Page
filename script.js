@@ -97,10 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(portfolioContainer);
     }
 
-    const contactContainer = document.querySelector('.contact-container');
-    if (contactContainer) {
-        observer.observe(contactContainer);
-    }
 
     // Command Bar Ripple Effect
     const commandInput = document.getElementById('command-input');
@@ -144,20 +140,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     loadProjects();
-
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            console.log('Form Submitted:', { name, email, message });
-
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
-        });
-    }
 });

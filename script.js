@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('hero-canvas');
     const ctx = canvas.getContext('2d');
     const colors = ['#003566','#00517c','#6012cd','#03055e','#4877e4','#0007c7','#023d8a','#7209b7'];
-    const blobs = Array.from({length: 7}, (_, i) => ({
+    const blobs = Array.from({length: 5}, (_, i) => ({
         x: 0.1 + Math.random() * 0.8,
         y: 0.1 + Math.random() * 0.8,
         r: 0.28 + Math.random() * 0.2,

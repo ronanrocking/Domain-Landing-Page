@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ripple.classList.add('expanding');
         commandInput.classList.add('active');
-        commandInput.placeholder = 'Enter Command';
+        commandInput.placeholder = 'RUN';
     });
 
     commandInput.addEventListener('blur', () => {

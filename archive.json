@@ -1,0 +1,12 @@
+{
+    "live": [],
+    "archive": [
+        {
+            "title": "Old Project One",
+            "description": "A legacy project that is no longer maintained but kept for historical purposes.",
+            "date": "January 2024",
+            "image": "assets/projects/Archive1.png",
+            "url": "https://archive.ronanrocking.com/project1"
+        }
+    ]
+}

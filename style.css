@@ -186,6 +186,15 @@ body {
         padding: 0.5rem 1rem;
         font-size: 1rem;
     }
+
+    .contact-container {
+        padding: 10vh 0 !important;
+    }
+
+    .contact-container h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
 }
 
 .hero-left {
@@ -483,4 +492,88 @@ html {
     font-size: 0.9rem;
     line-height: 1.5;
     opacity: 0.8;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 10vh 0;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.contact-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+#contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    width: 100%;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1), inset 0 0 10px rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.1rem;
+    outline: none;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), inset 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.submit-btn {
+    padding: 1rem 2rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    align-self: center;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
 }

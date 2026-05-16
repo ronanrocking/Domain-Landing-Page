@@ -117,6 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ripple.classList.add('expanding');
         commandInput.classList.add('active');
+        commandInput.placeholder = 'Enter Command';
     });
 
     commandInput.addEventListener('blur', () => {
@@ -124,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ripple.classList.remove('expanding');
         }
         commandInput.classList.remove('active');
+        commandInput.placeholder = 'RUN';
     });
 
     loadProjects();

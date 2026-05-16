@@ -239,6 +239,10 @@ body {
     box-shadow: none;
 }
 
+#command-input.active::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+}
+
 .command-ripple {
     position: absolute;
     background: rgba(255, 255, 255, 0.65);

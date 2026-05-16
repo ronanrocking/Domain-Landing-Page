@@ -1,6 +1,3 @@
-/* ============================================================
-   ORIGINAL — untouched from source
-   ============================================================ */
 body {
     font-family: 'Playfair Display', serif;
     margin: 0;
@@ -30,12 +27,53 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    filter: url("#goo");
+}
+
+.blob {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    mix-blend-mode: screen;
+    opacity: 0.7;
+}
+
+.b1 { background: #003566; top: -10%; left: -10%; animation: move1 12s infinite linear; }
+.b2 { background: #001d3d; bottom: -10%; right: -10%; animation: move2 15s infinite linear; }
+.b3 { background: #0077b6; top: 40%; left: 30%; animation: move3 18s infinite linear; }
+.b4 { background: #6012cd; top: 10%; right: 20%; animation: move4 14s infinite linear; }
+.b5 { background: #03045e; bottom: 20%; left: 10%; animation: move1 16s infinite linear reverse; }
+.b6 { background: #48cae4b5; top: 30%; right: 10%; animation: move2 20s infinite linear reverse; }
+
+@keyframes move1 {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(100px, 200px) scale(1.2); }
+    66% { transform: translate(200px, -100px) scale(0.8); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes move2 {
+    0% { transform: translate(0, 0) scale(1.2); }
+    50% { transform: translate(-200px, -300px) scale(0.7); }
+    100% { transform: translate(0, 0) scale(1.2); }
+}
+
+@keyframes move3 {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(150px, 150px) rotate(180deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+@keyframes move4 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-300px, 100px) scale(1.5); }
+    100% { transform: translate(0, 0) scale(1); }
 }
 
 .hero-overlay {
     position: relative;
     z-index: 10;
-    width: 100%;
 }
 
 .container {
@@ -48,6 +86,105 @@ body {
     width: 100%;
     height: 100%;
     align-items: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        padding: 15vh 2rem;
+        box-sizing: border-box;
+        min-height: 100vh;
+    }
+
+    .hero-left {
+        flex: 0 0 auto;
+        width: 100%;
+        animation: fadeInUpMobile 1.2s ease-out forwards;
+    }
+
+    @keyframes fadeInUpMobile {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1#title_name {
+        font-size: 2.3rem;
+    }
+
+    .command-bar-wrapper {
+        width: 100%;
+    }
+
+    .hero-divider {
+        width: 70% !important;
+        height: 1px !important;
+        min-height: 1px !important;
+        background: radial-gradient(circle at center, 
+            rgba(255,255,255,0.9) 0%, 
+            rgba(255,255,255,0.4) 40%, 
+            rgba(255,255,255,0) 100%) !important;
+        margin: 1rem auto !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .hero-right {
+        flex: 0 0 auto;
+        padding: 0;
+        text-align: center;
+        width: 100%;
+        animation: fadeInUpMobile 1.2s ease-out 0.5s forwards;
+    }
+
+    .portfolio-container {
+        height: auto;
+        min-height: auto;
+        padding: 10vh 0;
+        justify-content: center;
+    }
+
+    .viewport-section {
+        height: auto !important;
+        min-height: 100vh;
+        scroll-snap-align: none !important;
+        overflow: visible !important;
+        position: relative;
+    }
+
+    .projects-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: visible;
+        max-height: none;
+        flex: none;
+        gap: 3rem;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .project-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .tab-bar {
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .tab-btn {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
 }
 
 .hero-left {
@@ -89,7 +226,6 @@ body {
     font-size: 1.1rem;
     outline: none;
     transition: color 0.4s ease, border-color 0.4s ease;
-    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     text-align: center;
     position: relative;
@@ -125,8 +261,9 @@ body {
     font-style: italic;
 }
 
+
 .hero-right {
-    flex: 0 0 40%;
+    flex: 0 0 calc(40% - 10rem);
     padding: 0 5rem;
     display: flex;
     flex-direction: column;
@@ -150,7 +287,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'EB Garamond', serif;
     font-style: italic;
     font-weight: 400;
+
     margin: 0;
+
+    
 }
 
 h1 {
@@ -188,16 +328,12 @@ html {
     scroll-snap-type: y mandatory;
 }
 
-/* ============================================================
-   PORTFOLIO SECTION — rebuilt for mobile centering fix
-   ============================================================ */
 .portfolio-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     min-height: 100vh;
-    width: 100%;
     padding: 20vh 0;
     box-sizing: border-box;
     opacity: 0;
@@ -214,6 +350,7 @@ html {
 }
 
 .tab-bar {
+    
     display: flex;
     gap: 1rem;
     margin-bottom: 3rem;
@@ -273,7 +410,7 @@ html {
     justify-content: center;
     align-content: flex-start;
     gap: 3rem;
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     flex: 1;
@@ -309,11 +446,13 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: grayscale(100%);
     transition: all 0.5s ease;
 }
 
 .project-card:hover img {
     transform: scale(1.05);
+    filter: grayscale(0%);
 }
 
 .project-info {
@@ -342,120 +481,4 @@ html {
     font-size: 0.9rem;
     line-height: 1.5;
     opacity: 0.8;
-}
-
-/* ============================================================
-   MOBILE (≤ 768px)
-   — hero rules: original verbatim
-   — portfolio rules: rebuilt fix
-   ============================================================ */
-@media (max-width: 768px) {
-
-    /* --- Hero (original) --- */
-    .container {
-        width: 90%;
-    }
-
-    .hero-content {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 3rem;
-        padding: 15vh 2rem;
-        box-sizing: border-box;
-        min-height: 100vh;
-    }
-
-    .hero-left {
-        flex: 0 0 auto;
-        width: 100%;
-        animation: fadeInUpMobile 1.2s ease-out forwards;
-    }
-
-    @keyframes fadeInUpMobile {
-        from { opacity: 0; transform: translateY(15px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    h1#title_name {
-        font-size: 4.3rem;
-    }
-
-    .command-bar-wrapper {
-        width: 100%;
-    }
-
-    .hero-divider {
-        width: 70% !important;
-        height: 1px !important;
-        min-height: 1px !important;
-        background: radial-gradient(circle at center, 
-            rgba(255,255,255,0.9) 0%, 
-            rgba(255,255,255,0.4) 40%, 
-            rgba(255,255,255,0) 100%) !important;
-        margin: 1rem auto !important;
-        opacity: 1 !important;
-        transform: none !important;
-    }
-
-    .hero-right {
-        flex: 0 0 auto;
-        padding: 0;
-        text-align: center;
-        width: 100%;
-        animation: fadeInUpMobile 1.2s ease-out 0.5s forwards;
-    }
-
-    /* --- Shared section (original) --- */
-    .viewport-section {
-        height: auto !important;
-        min-height: 100vh;
-        scroll-snap-align: none !important;
-        overflow: visible !important;
-        position: relative;
-    }
-
-    /* --- Tab bar (original) --- */
-    .tab-bar {
-        gap: 0.5rem;
-        margin-bottom: 2rem;
-    }
-
-    .tab-btn {
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-    }
-
-    /* --- Portfolio container (original base, keeps padding) --- */
-    .portfolio-container {
-        height: auto !important;
-        min-height: auto;
-        padding: 10vh 0;
-        justify-content: center !important;
-        align-items: center !important;
-        width: 100% !important;
-    }
-
-    /* --- Grid & cards: the fix --- */
-    .projects-grid {
-        flex-direction: column;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: flex-start;
-        width: 100%;
-        max-width: 100%;
-        padding: 0 1.5rem;
-        overflow: visible;
-        max-height: none;
-        flex: none;
-    }
-
-    .project-card {
-        flex: none;
-        width: 100%;
-        max-width: 480px;
-        margin-left: auto;
-        margin-right: auto;
-        height: auto;
-    }
 }

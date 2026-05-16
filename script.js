@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.animationDelay = `${index * 0.1}s`;
             card.innerHTML = `
                 <div class="project-image-wrapper">
-                    <img src="${project.image}" alt="${project.title}" onerror="this.src='https://via.placeholder.com/600x400/111/fff?text=Project+Image'">
+                    <img src="${project.image}" alt="${project.title}"">
                 </div>
                 <div class="project-info">
                     <div class="project-header">

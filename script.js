@@ -49,91 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     drawHero();
 
-    // ── Projects ────────────────────────────────────────────────────────
-    const projectsGrid = document.getElementById('projects-grid');
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    let projectsData = { live: [], archive: [] };
-
-    const loadProjects = async () => {
-        try {
-            const [projectsResponse, archiveResponse] = await Promise.all([
-                fetch('projects.json'),
-                fetch('archive.json')
-            ]);
-            const liveProjectsData = await projectsResponse.json();
-            const archiveProjectsData = await archiveResponse.json();
-            projectsData = {
-                live: liveProjectsData.live || [],
-                archive: archiveProjectsData.archive || []
-            };
-            renderProjects('live');
-        } catch (error) {
-            console.error('Error loading projects:', error);
-        }
-    };
-
-    const renderProjects = (category) => {
-        projectsGrid.innerHTML = '';
-        const projects = projectsData[category] || [];
-        projects.forEach((project, index) => {
-            const card = document.createElement('a');
-            card.href = project.url || '#';
-            card.target = "_blank";
-            card.className = 'project-card';
-            card.style.animationDelay = `${index * 0.1}s`;
-            card.innerHTML = `
-                <div class="project-image-wrapper">
-                    <img src="${project.image}" alt="${project.title}"">
-                </div>
-                <div class="project-info">
-                    <div class="project-header">
-                        <h3>${project.title}</h3>
-                        <span class="project-date">${project.date}</span>
-                    </div>
-                    <p class="project-description">${project.description}</p>
-                </div>
-            `;
-            projectsGrid.appendChild(card);
-        });
-    };
-
-    const indicator = document.querySelector('.tab-indicator');
-
-    const updateIndicator = (activeBtn) => {
-        if (indicator && activeBtn) {
-            indicator.style.width = `${activeBtn.offsetWidth}px`;
-            indicator.style.left = `${activeBtn.offsetLeft}px`;
-        }
-    };
-
-    window.addEventListener('resize', () => {
-        const activeTab = document.querySelector('.tab-btn.active');
-        updateIndicator(activeTab);
-    });
-
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            tabBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            updateIndicator(btn);
-            renderProjects(btn.dataset.tab);
-        });
-    });
-
-    setTimeout(() => {
-        const activeTab = document.querySelector('.tab-btn.active');
-        updateIndicator(activeTab);
-    }, 100);
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('visible');
-        });
-    }, { threshold: 0.1 });
-
-    const portfolioContainer = document.querySelector('.portfolio-container');
-    if (portfolioContainer) observer.observe(portfolioContainer);
-
     // ── Command bar ripple ───────────────────────────────────────────────
     const commandInput = document.getElementById('command-input');
     const commandWrapper = document.querySelector('.command-bar-wrapper');
@@ -166,6 +81,4 @@ document.addEventListener('DOMContentLoaded', () => {
         commandInput.classList.remove('active');
         commandInput.placeholder = 'RUN';
     });
-
-    loadProjects();
 });

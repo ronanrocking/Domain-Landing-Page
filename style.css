@@ -447,6 +447,13 @@ html {
     line-height: 1;
 }
 
+.project-load-error {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.74);
+    font-family: 'Merriweather', serif;
+    font-size: 0.95rem;
+}
+
 @keyframes projectGradientShift {
     0% {
         transform: translate3d(-2%, -1%, 0) scale(1);

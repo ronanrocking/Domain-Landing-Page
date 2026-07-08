@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const dataVersion = '20260708-1';
 
     // ── Hero canvas background ──────────────────────────────────────────
     const canvas = document.getElementById('hero-canvas');
@@ -58,8 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadProjects = async () => {
         try {
             const [projectsResponse, archiveResponse] = await Promise.all([
-                fetch('projects.json'),
-                fetch('archive.json')
+                fetch(`projects.json?v=${dataVersion}`),
+                fetch(`archive.json?v=${dataVersion}`)
             ]);
             const liveProjectsData = await projectsResponse.json();
             const archiveProjectsData = await archiveResponse.json();
@@ -70,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
             renderProjects('live');
         } catch (error) {
             console.error('Error loading projects:', error);
+            projectsGrid.innerHTML = '<p class="project-load-error">Projects unavailable right now.</p>';
         }
     };
 

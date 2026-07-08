@@ -1,17 +1,31 @@
 {
     "live": [
         {
+            "title": "RaceFrame",
+            "description": "Photo Management App for Running and Sports events",
+            "date": "July 2025",
+            "tags": ["FastAPI", "PostgreSQL", "Google Vision"],
+            "url": "https://raceframe.ronanrocking.com"
+        },
+        {
+            "title": "OmniPortal",
+            "description": "Browser based web app for peer to peer communication using WebRTC (Chat / Voice / Video Calls)",
+            "date": "June 2026",
+            "tags": ["FastAPI", "Docker", "WebRTC", "WebSockets"],
+            "url": "https://omniportal.ronanrocking.com"
+        },
+        {
             "title": "FileBrowser",
             "description": "My Personal File Server giving me free unlimited cloud storage. Running on my Pi with a 1TB SSD",
             "date": "November 2025",
-            "image": "assets/projects/FileBrowser.png",
+            "tags": ["FileBrowser", "Docker", "Raspberry Pi", "Cloudflare"],
             "url": "https://files.ronanrocking.com"
         },
         {
             "title": "Remote SSH Terminal",
             "description": "SSH Terminal to my Pi (which hosts all these projects) to grant me remote access.",
             "date": "April 2026",
-            "image": "assets/projects/SSH.png",
+            "tags": ["SSH", "Linux", "Raspberry Pi", "Cloudflare"],
             "url": "https://ssh.ronanrocking.com"
         }
     ],

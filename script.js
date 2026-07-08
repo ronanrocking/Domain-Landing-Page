@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Hero canvas background ──────────────────────────────────────────
     const canvas = document.getElementById('hero-canvas');
+    const disabledHeroLinks = document.querySelectorAll('[data-disabled-link="true"]');
     const ctx = canvas.getContext('2d');
     const colors = ['#003566','#00517c','#6012cd','#03055e','#4877e4','#0007c7','#023d8a','#7209b7'];
     const blobs = Array.from({length: 5}, (_, i) => ({
@@ -72,26 +73,41 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const escapeHTML = (value = '') => String(value)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+
     const renderProjects = (category) => {
         projectsGrid.innerHTML = '';
         const projects = projectsData[category] || [];
         projects.forEach((project, index) => {
-            const card = document.createElement('a');
-            card.href = project.url || '#';
-            card.target = "_blank";
+            const card = document.createElement('article');
             card.className = 'project-card';
             card.style.animationDelay = `${index * 0.1}s`;
+            const tags = Array.isArray(project.tags) ? project.tags : [];
+            const tagsMarkup = tags.map(tag => `<span class="project-tag">${escapeHTML(tag)}</span>`).join('');
+            const linkMarkup = project.url ? `
+                <a class="project-link" href="${escapeHTML(project.url)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${escapeHTML(project.title)}">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M14 3h7v7h-2V6.4l-8.3 8.3-1.4-1.4L17.6 5H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z"/>
+                    </svg>
+                </a>
+            ` : '';
             card.innerHTML = `
-                <div class="project-image-wrapper">
-                    <img src="${project.image}" alt="${project.title}"">
-                </div>
                 <div class="project-info">
                     <div class="project-header">
-                        <h3>${project.title}</h3>
-                        <span class="project-date">${project.date}</span>
+                        <div class="project-title-block">
+                            <h3>${escapeHTML(project.title)}</h3>
+                            <span class="project-date">${escapeHTML(project.date)}</span>
+                        </div>
+                        ${linkMarkup}
                     </div>
-                    <p class="project-description">${project.description}</p>
+                    <p class="project-description">${escapeHTML(project.description)}</p>
                 </div>
+                ${tagsMarkup ? `<div class="project-tags">${tagsMarkup}</div>` : ''}
             `;
             projectsGrid.appendChild(card);
         });
@@ -134,37 +150,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const portfolioContainer = document.querySelector('.portfolio-container');
     if (portfolioContainer) observer.observe(portfolioContainer);
 
-    // ── Command bar ripple ───────────────────────────────────────────────
-    const commandInput = document.getElementById('command-input');
-    const commandWrapper = document.querySelector('.command-bar-wrapper');
-    let ripple = null;
-
-    commandInput.addEventListener('mousedown', (e) => {
-        if (commandInput.classList.contains('active')) return;
-        const rect = commandWrapper.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        if (!ripple) {
-            ripple = document.createElement('div');
-            ripple.className = 'command-ripple';
-            commandWrapper.appendChild(ripple);
-        }
-        ripple.style.left = `${x}px`;
-        ripple.style.top = `${y}px`;
-        ripple.style.width = `${rect.width * 2.5}px`;
-        ripple.style.height = `${rect.width * 2.5}px`;
-        ripple.style.marginLeft = `-${rect.width * 1.25}px`;
-        ripple.style.marginTop = `-${rect.width * 1.25}px`;
-        ripple.offsetWidth;
-        ripple.classList.add('expanding');
-        commandInput.classList.add('active');
-        commandInput.placeholder = 'RUN';
-    });
-
-    commandInput.addEventListener('blur', () => {
-        if (ripple) ripple.classList.remove('expanding');
-        commandInput.classList.remove('active');
-        commandInput.placeholder = 'RUN';
+    disabledHeroLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+        });
     });
 
     loadProjects();

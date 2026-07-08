@@ -36,6 +36,9 @@ body {
     position: relative;
     z-index: 10;
     width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .container {
@@ -46,8 +49,12 @@ body {
 .hero-content {
     display: flex;
     width: 100%;
-    height: 100%;
+    max-width: 1200px;
+    min-height: 100vh;
     align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin: 0 auto;
 }
 
 .hero-left {
@@ -55,6 +62,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-right: 2.5rem;
     animation: fadeInUp 1.7s ease-out 0.5s forwards;
     opacity: 0;
 }
@@ -67,72 +75,83 @@ body {
     width: 100%;
 }
 
-.command-bar-wrapper {
-    position: relative;
+.social-links {
     width: 75%;
-    max-width: 600px;
+    max-width: 420px;
     display: flex;
     justify-content: center;
-    overflow: hidden;
-    border-radius: 50px;
+    gap: 2.25rem;
 }
 
-#command-input {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.478);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1), inset 0 0 10px rgba(255, 255, 255, 0.05);
-    border-radius: 25px;
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.84);
+    filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.34));
+    transition: transform 0.18s ease, color 0.18s ease, opacity 0.18s ease, filter 0.18s ease;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
     color: #ffffff;
-    font-family: 'EB Garamond', serif;
-    font-size: 1.1rem;
-    outline: none;
-    transition: color 0.4s ease, border-color 0.4s ease;
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    text-align: center;
-    position: relative;
-    z-index: 2;
+    opacity: 1;
+    filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.5));
+    transform: translateY(-2px);
 }
 
-#command-input.active {
-    color: #000;
-    border-color: transparent;
-    box-shadow: none;
-}
-
-#command-input.active::placeholder {
-    color: rgba(0, 0, 0, 0.6);
-}
-
-.command-ripple {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.65);
-    border-radius: 50%;
-    transform: scale(0);
-    pointer-events: none;
-    z-index: 1;
-    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.command-ripple.expanding {
-    transform: scale(4);
-}
-
-#command-input::placeholder {
-    color: rgba(255, 255, 255, 0.4);
-    font-style: italic;
+.social-link svg {
+    width: 1.55rem;
+    height: 1.55rem;
+    fill: currentColor;
+    opacity: 0.88;
 }
 
 .hero-right {
     flex: 0 0 40%;
-    padding: 0 5rem;
+    padding: 0 0 0 2.5rem;
     display: flex;
     flex-direction: column;
+    gap: 1rem;
     justify-content: center;
     animation: fadeInUp 1.2s ease-out 1.5s forwards;
     opacity: 0;
+}
+
+.hero-about-copy {
+    margin: 0;
+    padding: 0.4rem 0 0.2rem 0.25rem;
+    font-family: 'Merriweather', serif;
+    font-size: 0.92rem;
+    font-weight: 300;
+    line-height: 1.9;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-highlight {
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.34), 0 0 18px rgba(72, 119, 228, 0.18);
+    transition: color 0.18s ease, text-shadow 0.18s ease, opacity 0.18s ease;
+}
+
+.hero-highlight:hover,
+.hero-highlight:focus-visible {
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.46), 0 0 20px rgba(72, 119, 228, 0.22);
+}
+
+.hero-bullets {
+    margin: 1rem 0 1.1rem 1.2rem;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Merriweather', serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.hero-bullets li::marker {
+    color: rgba(255, 255, 255, 0.78);
 }
 
 @keyframes fadeInUp {
@@ -285,35 +304,54 @@ html {
     flex: 0 1 450px;
     min-width: 0;
     display: flex;
+    position: relative;
     flex-direction: column;
-    gap: 0.8rem;
-    height: 100%;
+    justify-content: space-between;
+    gap: 0.95rem;
+    min-height: 216px;
+    padding: 1.15rem 1.2rem;
+    box-sizing: border-box;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s ease-out forwards;
-    text-decoration: none;
-    color: inherit;
-}
-
-.project-image-wrapper {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
     overflow: hidden;
-    border-radius: 4px;
-    flex-shrink: 1;
-    min-height: 0;
+    background: rgba(255, 255, 255, 0.025);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.08), inset 0 0 8px rgba(255, 255, 255, 0.03);
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
 }
 
-.project-image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: all 0.5s ease;
+.project-card::before {
+    content: "";
+    position: absolute;
+    inset: -30%;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(83, 141, 255, 0.17), transparent 42%),
+        radial-gradient(circle at 80% 30%, rgba(16, 94, 173, 0.12), transparent 38%),
+        radial-gradient(circle at 50% 85%, rgba(10, 52, 115, 0.18), transparent 46%),
+        linear-gradient(135deg, rgba(3, 24, 58, 0.26), rgba(8, 54, 110, 0.14), rgba(1, 18, 39, 0.3));
+    background-size: 140% 140%;
+    animation: projectGradientShift 18s ease-in-out infinite alternate;
+    opacity: 0.98;
+    z-index: 0;
 }
 
-.project-card:hover img {
-    transform: scale(1.05);
+.project-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 14px rgba(255, 255, 255, 0.1), inset 0 0 10px rgba(255, 255, 255, 0.04);
+}
+
+.project-card:hover::before,
+.project-card:focus-visible::before {
+    opacity: 0.58;
 }
 
 .project-info {
@@ -325,11 +363,20 @@ html {
 .project-header {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: flex-start;
+    gap: 1rem;
 }
 
 .project-header h3 {
-    font-size: 1.6rem;
+    font-size: 2rem;
+    line-height: 1.05;
+}
+
+.project-title-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    min-width: 0;
 }
 
 .project-date {
@@ -338,10 +385,68 @@ html {
     opacity: 0.6;
 }
 
+.project-link {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    color: rgba(255, 255, 255, 0.72);
+    transition: color 0.18s ease, transform 0.18s ease, opacity 0.18s ease;
+}
+
+.project-link:hover,
+.project-link:focus-visible {
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.project-link svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: currentColor;
+}
+
 .project-description {
     font-size: 0.9rem;
     line-height: 1.5;
     opacity: 0.8;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-tag {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.65rem;
+    padding: 0.2rem 0.65rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.78);
+    background: rgba(255, 255, 255, 0.05);
+    font-family: 'EB Garamond', serif;
+    font-size: 0.88rem;
+    line-height: 1;
+}
+
+@keyframes projectGradientShift {
+    0% {
+        transform: translate3d(-2%, -1%, 0) scale(1);
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        transform: translate3d(2%, 2%, 0) scale(1.04);
+        filter: hue-rotate(8deg);
+    }
+    100% {
+        transform: translate3d(-1%, 3%, 0) scale(1.02);
+        filter: hue-rotate(-6deg);
+    }
 }
 
 /* ============================================================
@@ -369,6 +474,7 @@ html {
     .hero-left {
         flex: 0 0 auto;
         width: 100%;
+        padding-right: 0;
         animation: fadeInUpMobile 1.2s ease-out forwards;
     }
 
@@ -381,8 +487,9 @@ html {
         font-size: 4.3rem;
     }
 
-    .command-bar-wrapper {
+    .social-links {
         width: 100%;
+        gap: 1.5rem;
     }
 
     .hero-divider {
@@ -404,6 +511,16 @@ html {
         text-align: center;
         width: 100%;
         animation: fadeInUpMobile 1.2s ease-out 0.5s forwards;
+    }
+
+    .hero-about-copy {
+        padding: 0.35rem 0;
+    }
+
+    .hero-bullets {
+        display: inline-block;
+        text-align: left;
+        margin: 1rem 0 1.1rem 0;
     }
 
     /* --- Shared section (original) --- */
@@ -456,6 +573,10 @@ html {
         max-width: 480px;
         margin-left: auto;
         margin-right: auto;
-        height: auto;
+        min-height: 196px;
+    }
+
+    .project-header h3 {
+        font-size: 1.7rem;
     }
 }

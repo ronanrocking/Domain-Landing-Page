@@ -6,21 +6,21 @@
             "title": "Speaker I",
             "description": "Self-designed 3W BT Speaker! First woodworking project",
             "date": "Dec 2020",
-            "image": "assets/archive/Speaker.jpg",
+            "tags": ["Woodworking", "Bluetooth", "Audio"],
             "url": "#"
         },
         {
             "title": "Speaker II",
             "description": "Self-designed 60W 3-way Boombox! Self designed bass/trebel control circuits.",
             "date": "Dec 2020",
-            "image": "assets/archive/Speaker2.jpeg",
+            "tags": ["Woodworking", "Audio", "Circuit Design"],
             "url": "#"
         },
         {
             "title": "Smart Switches",
             "description": "A small project that let me control my room's switches via my phone. local server hosted on the RPi, which controlled relays.",
             "date": "2018",
-            "image": "assets/projects/Archive1.png",
+            "tags": ["Raspberry Pi", "Relays", "Local Server"],
             "url": "https://archive.ronanrocking.com/project1"
         }
     ]
